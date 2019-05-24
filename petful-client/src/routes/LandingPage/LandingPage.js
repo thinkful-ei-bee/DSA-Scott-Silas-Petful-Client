@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import bannerImage from '../../images/Banner-Image.png';
-//import '../../images/Banner-Image.png';
 import './LandingPage.css';
 
 export default class LandingPage extends Component {
