@@ -23,13 +23,12 @@ export default class AdoptionPage extends Component {
 
 
   render() {
-
     return (
       <>
         <header role='banner' className='adoption-banner'>
           <h1>Adoption</h1>
         </header>
-        <Animal state={this.state}/>
+        <Animal cats={this.state.cats}/>
       </>
     )
   }
