@@ -3,6 +3,7 @@
   width: 30em;
   border: solid black 1px;
   background-color: black;
+  display: inline-block;
 }
 
 .thumb {

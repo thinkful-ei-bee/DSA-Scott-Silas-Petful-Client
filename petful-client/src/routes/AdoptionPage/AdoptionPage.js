@@ -97,10 +97,14 @@ export default class AdoptionPage extends Component {
 
           <UserList />
         </header>
-        <Cats cats={this.state.cats} queuePosition={this.state.queuePosition}/>
-        <Thumbs animals={this.state.cats && this.state.cats.cats}/>
-        <Dogs dogs={this.state.dogs} queuePosition={this.state.queuePosition}/>
-        <Thumbs animals={this.state.dogs && this.state.dogs.dogs}/>
+        <div classname='animal-display'>
+          <Cats cats={this.state.cats} queuePosition={this.state.queuePosition}/>
+          <Dogs dogs={this.state.dogs} queuePosition={this.state.queuePosition}/>
+        </div>
+        <div className='thumb-display'>
+          <Thumbs animals={this.state.cats && this.state.cats.cats}/>
+          <Thumbs animals={this.state.dogs && this.state.dogs.dogs}/>
+        </div>
 
 
         
