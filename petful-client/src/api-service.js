@@ -12,6 +12,7 @@ const ApiService = {
       )
   },
 
+
   getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`)
       .then(res => {
@@ -34,7 +35,17 @@ const ApiService = {
         : res.json()
     })
     .catch(err => console.log(err))
-  }
+  },
+  
+  getDogs() {
+    return fetch(`${config.API_ENDPOINT}/dogs`)
+      .then(res => 
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+
 
 }
 

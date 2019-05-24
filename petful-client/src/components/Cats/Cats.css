@@ -1,0 +1,29 @@
+.animal-div {
+  width: 30%;
+  border: black solid 5px;
+  padding: 10px;
+  margin: auto;
+}
+.animal-div span{
+  font-weight: bold;
+}
+
+.animal-div h2 {
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.animal-div img {
+  width: 100%;
+  border: solid black 1px;
+}
+
+.adopt-button {
+  width: 25%;
+  height: 2em;
+  border: black 1px solid;
+  border-radius: 3px;
+  font-size: 1em;
+  font-weight: bold;
+}
