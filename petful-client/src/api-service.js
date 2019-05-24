@@ -12,6 +12,16 @@ const ApiService = {
       )
   },
 
+  deleteCat() {
+    return fetch(`${config.API_ENDPOINT}/cats`, {
+      method: 'DELETE'
+    })
+    .then(res => 
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    ) 
+  },
 
   getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`)
@@ -36,6 +46,17 @@ const ApiService = {
     })
     .catch(err => console.log(err))
   },
+
+  deleteUser() {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'DELETE'
+    })
+    .then(res => {
+      return (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    })
+  },
   
   getDogs() {
     return fetch(`${config.API_ENDPOINT}/dogs`)
@@ -46,7 +67,16 @@ const ApiService = {
       )
   },
 
-
+  deleteDog() {
+    return fetch(`${config.API_ENDPOINT}/dogs`, {
+      method: 'DELETE'
+    })
+    .then(res => 
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )   
+  }
 }
 
 export default ApiService;

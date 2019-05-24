@@ -17,7 +17,6 @@ export default class AdoptionPage extends Component {
       queuePosition: 0,
     }
   }
-//<Animal cats={this.state.cats}/>
 
   componentDidMount() {
 
@@ -55,6 +54,40 @@ export default class AdoptionPage extends Component {
     this.setState({queuePosition: counter});
   }
 
+  simulateAdoption() {
+    let position = this.state.queuePosition
+
+    if (position === 2) {
+      // dequeue one user and one dog
+      ApiService.deleteUser()
+        .then(res => {
+          this.setState({ users: res })
+        })
+        .then(() => {
+          this.countUserQueue()
+        })
+      
+      ApiService.deleteDog()
+        .then(res => {
+          this.setState({ dogs: res })
+        })
+    }
+
+    else if (position === 1) {
+      ApiService.deleteUser()
+        .then(res => {
+          this.setState({ users: res })
+        })
+        .then(() => {
+          this.countUserQueue()
+        })
+      
+      ApiService.deleteCat()
+        .then(res => {
+          this.setState({ cats: res })
+        })
+    }
+  }
 
   render() {
     return (
@@ -73,9 +106,11 @@ export default class AdoptionPage extends Component {
         
 
 
-        <button onClick={this.countUserQueue.bind(this)}>
-          button
-        </button>
+        <div className='position'>
+          {'Place in line: ' + this.state.queuePosition}
+        </div>
+
+        <button onClick={() => this.simulateAdoption()}>Simulate</button>
 
 
 

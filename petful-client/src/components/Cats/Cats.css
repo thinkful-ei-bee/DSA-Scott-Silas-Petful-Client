@@ -3,6 +3,7 @@
   border: black solid 5px;
   padding: 10px;
   margin: auto;
+  display: inline-block;
 }
 .animal-div span{
   font-weight: bold;
