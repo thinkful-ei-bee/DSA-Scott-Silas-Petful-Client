@@ -11,6 +11,4 @@ export default class Animal extends Component {
       </div>
     )
   }
-
-
 }
