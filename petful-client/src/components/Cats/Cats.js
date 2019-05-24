@@ -15,7 +15,7 @@ export default class Cats extends Component {
         <p><span>Breed:</span> {this.props.cats.cats && this.props.cats.cats.first.value.breed}</p>
         <p><span>Story:</span> {this.props.cats.cats && this.props.cats.cats.first.value.story}</p>
 
-        <button onClick={this.props.adopt} className='adopt-button' disabled={!this.props.first}>
+        <button onClick={this.props.adopt} className='adopt-button' disabled={this.props.queuePosition}>
           Adopt!
         </button>
       </div>

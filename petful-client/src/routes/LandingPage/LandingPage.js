@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import bannerImage from '../../images/Banner-Image.png';
+import ApiService from '../../api-service';
 import './LandingPage.css';
 
 export default class LandingPage extends Component {
+
+  postUser() {
+    ApiService.postUser()
+      .then(res => {
+        console.log('POSTUSER RES: ', res)
+      })
+  }
+  
 
   render() {
 
@@ -28,7 +37,7 @@ export default class LandingPage extends Component {
         </section>
 
         <div className='get-started-button'>
-          <Link to='/Adoption' className='get-started-link'>
+          <Link to='/Adoption' className='get-started-link' onClick={this.postUser.bind(this)}>
             Get Started
           </Link>
         </div>
