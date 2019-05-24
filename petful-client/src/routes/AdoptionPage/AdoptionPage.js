@@ -4,6 +4,7 @@ import Dogs  from '../../components/Dogs/Dogs'
 import './AdoptionPage.css';
 import ApiService from '../../api-service';
 import UserList from '../UserList/UserList'
+import Thumbs from '../../components/thumbs/thumbs';
 
 export default class AdoptionPage extends Component {
 
@@ -64,20 +65,32 @@ export default class AdoptionPage extends Component {
           <UserList />
         </header>
         <Cats cats={this.state.cats} queuePosition={this.state.queuePosition}/>
+        <Thumbs animals={this.state.cats && this.state.cats.cats}/>
         <Dogs dogs={this.state.dogs} queuePosition={this.state.queuePosition}/>
+        <Thumbs animals={this.state.dogs && this.state.dogs.dogs}/>
+
+
+        
+
 
         <button onClick={this.countUserQueue.bind(this)}>
           button
         </button>
+
+
+
+        
 
       </>
     )
   }
 }
 
-//image
-//name
-//sex
-//age
-//breed
-//story
+//when update button gets pressed:
+//1) dequeue a user
+//2) dequeue a cat or a dog
+
+
+//thumbnail row of remaining animals
+
+//there are X users in front of you

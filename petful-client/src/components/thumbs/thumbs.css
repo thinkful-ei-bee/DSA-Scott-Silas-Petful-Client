@@ -1,0 +1,12 @@
+.thumbs-div {
+  margin: auto;
+  width: 30em;
+  border: solid black 1px;
+  background-color: black;
+}
+
+.thumb {
+  height: 9em;
+  width: 33%;
+  border: solid black 1px;
+}
