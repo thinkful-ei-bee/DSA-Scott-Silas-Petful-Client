@@ -1,8 +1,11 @@
 .animal-div {
+  height: 90%;
   width: 30%;
   border: black solid 5px;
   padding: 10px;
   margin: auto;
+  margin-top: 0;
+  display: inline-block;
 }
 .animal-div span{
   font-weight: bold;

@@ -97,7 +97,7 @@ export default class AdoptionPage extends Component {
 
           <UserList />
         </header>
-        <div classname='animal-display'>
+        <div className='animal-display'>
           <Cats cats={this.state.cats} queuePosition={this.state.queuePosition}/>
           <Dogs dogs={this.state.dogs} queuePosition={this.state.queuePosition}/>
         </div>
@@ -114,7 +114,7 @@ export default class AdoptionPage extends Component {
           {'Place in line: ' + this.state.queuePosition}
         </div>
 
-        <button onClick={() => this.simulateAdoption()}>Simulate</button>
+        <button onClick={() => this.simulateAdoption()} className='simulate-button'>Simulate</button>
 
 
 
