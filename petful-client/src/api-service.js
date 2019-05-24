@@ -1,4 +1,5 @@
 import config from './config';
+//import mainUser from './routes/main-user'
 
 const ApiService = {
 
@@ -11,6 +12,31 @@ const ApiService = {
       )
   },
 
+
+  getUsers() {
+    return fetch(`${config.API_ENDPOINT}/users`)
+      .then(res => {
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      })
+  },
+
+  postUser() {
+    return fetch(`${config.API_ENDPOINT}/users/Main_User`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(res => {
+      return (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    })
+    .catch(err => console.log(err))
+  },
+  
   getDogs() {
     return fetch(`${config.API_ENDPOINT}/dogs`)
       .then(res => 
@@ -19,6 +45,7 @@ const ApiService = {
           : res.json()
       )
   },
+
 
 }
 
