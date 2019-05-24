@@ -27,15 +27,14 @@ export default class AdoptionPage extends Component {
     ApiService.postUser()
       .then(res => {
         console.log('POSTUSER RES: ', res)
+      })
 
     ApiService.getDogs()
       .then(res => {
         this.setState({dogs: res})
         console.log(this.state.dogs)
-
-      })
+      }) 
   }
-
 
   render() {
     return (
