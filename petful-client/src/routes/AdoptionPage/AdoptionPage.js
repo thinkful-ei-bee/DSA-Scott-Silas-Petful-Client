@@ -12,28 +12,46 @@ export default class AdoptionPage extends Component {
     this.state= {
       cats: [],
       dogs: [],
+      users: [],
+      queuePosition: 0,
     }
   }
 //<Animal cats={this.state.cats}/>
 
   componentDidMount() {
+
     ApiService.getCats()
       .then(res => {
         this.setState({cats: res})
-        console.log(this.state.cats)
+        console.log('GETCATS RES: ', res)
       })
 
-
-    ApiService.postUser()
-      .then(res => {
-        console.log('POSTUSER RES: ', res)
-      })
 
     ApiService.getDogs()
       .then(res => {
         this.setState({dogs: res})
-        console.log(this.state.dogs)
-      }) 
+        console.log('GETDOGS RES: ', res)
+
+      })
+
+    ApiService.getUsers()
+      .then(res => {
+        this.setState({users: res})
+        console.log('GETUSERS RES: ', res)
+      })
+      .then(this.countUserQueue.bind(this))
+  }
+
+  countUserQueue(){
+    let user = this.state.users.users.first;
+    let counter = 0;
+    while(user.next !== null) {
+      counter++;
+      user = user.next;
+    }
+    console.log('counter: ',counter)
+    console.log('this.state.users.users.first: ', this.state.users.users.first)
+    this.setState({queuePosition: counter});
   }
 
   render() {
@@ -44,8 +62,12 @@ export default class AdoptionPage extends Component {
 
           <UserList />
         </header>
-        <Cats cats={this.state.cats}/>
-        <Dogs dogs={this.state.dogs}/>
+        <Cats cats={this.state.cats} queuePosition={this.state.queuePosition}/>
+        <Dogs dogs={this.state.dogs} queuePosition={this.state.queuePosition}/>
+
+        <button onClick={this.countUserQueue.bind(this)}>
+          button
+        </button>
 
       </>
     )
