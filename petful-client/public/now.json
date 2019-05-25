@@ -1,7 +1,7 @@
 {
   "version": 2,
   "alias": "Scott-Silas-Petful",
-  "name": "bookmarks-app",
+  "name": "Petful-app",
   "routes": [
       {
         "src": "^/static/(.*)",
